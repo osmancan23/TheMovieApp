@@ -3,6 +3,7 @@ import 'package:the_movie_app/core/constants/padding_constants.dart';
 import 'package:the_movie_app/core/constants/text_constants.dart';
 import 'package:the_movie_app/core/models/movie_detail_model.dart';
 import 'package:the_movie_app/core/utils/animation_helper.dart';
+import 'package:the_movie_app/utils/extensions/string_extensions.dart';
 
 class MovieDetailContent extends StatelessWidget {
   const MovieDetailContent({
@@ -49,7 +50,7 @@ class MovieDetailContent extends StatelessWidget {
             const SizedBox(height: PaddingConstants.medium),
             AnimationHelper.slideInTransition(
               child: Text(
-                '${TextConstants.releaseDate}: ${movie.releaseDate}',
+                '${TextConstants.releaseDate}: ${movie.releaseDate!.toDDMMYYYY()}',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
